@@ -1,4 +1,14 @@
 # Deploy to Azure Kubernetes Service
+- task: Kubernetes@1
+  inputs:
+    connectionType: 'Azure Resource Manager'
+    azureSubscriptionEndpoint: 'asc'
+    azureResourceGroup: 'adm-rg'
+    kubernetesCluster: 'myapp'
+    useClusterAdmin: true
+    command: 
+    secretType: 'dockerRegistry'
+    containerRegistryType: 'Azure Container Registry'
 # Build and push image to Azure Container Registry; Deploy to Azure Kubernetes Service
 # https://docs.microsoft.com/azure/devops/pipelines/languages/docker
 
